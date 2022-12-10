@@ -26,6 +26,7 @@
       </nav>
     </div>
     <main class="Main" id="Top">
+      <h1>あなたのデバイスは「<span id="device"></span>」</h1>
       <div class="douga">
         <video src="./HandUI_otonasi.mp4" loop autoplay muted></video>
       </div>
@@ -147,6 +148,21 @@
       dots: true
     });
   });
+  // デバイスの首里を取得する関数
+  function device() {
+  var ua = navigator.userAgent;
+  if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+          return 'mobile';
+    }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
+          return 'tablet';
+    }else{
+          return 'desktop';
+      }
+    }
+
+  window.onload = function() {
+    document.getElementById("device").innerHTML = device();
+  }
 </script>
 
 </body>
