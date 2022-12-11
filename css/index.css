@@ -111,7 +111,7 @@ img#apuri{
   margin-bottom: 100px;
 }
 .midasi2{
-  gap: 25px;
+  padding-left: 30px;
 }
 .use_box {
   display: flex;
@@ -128,6 +128,8 @@ img#apuri{
 }
 img#use{
   padding: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .dl{
@@ -141,20 +143,22 @@ img#use{
   margin-bottom: 70px;
 }
 .midasi3{
-
+text-align: center;
 }
 .dl_box {
   display: flex;
   flex-direction: column;
   background-color: #fefefe;
   border-radius: 30px;
+
 }
 .dl_text{
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2rem;
-  padding-bottom: 10px;
-  gap: 10px;
+  padding-bottom: 20px;
+  gap: 30px;
   text-align: center;
 }
 .dl_btn{
@@ -173,20 +177,28 @@ img#use{
   color: #F70B48;
 }
 .slider{
-  margin-left: 100px;
-  margin-right: 100px;
+  width:90%;
+  margin:0 auto;
 }
 .slider img{
   width: 100%;
-
+  background-color: #f2f2f272;
 }
 .slick-prev::before,
 .slick-next::before{
-  color:#000;
+  color:#F70B48;
   font-size:30px;
 }
+.slick-next{
+  right:-30px!important;
+}
+.slick-prev{
+  left:-40px!important;
+}
 .dl_text2{
-  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .copyright{
@@ -201,7 +213,8 @@ img#use{
     grid-template-columns: minmax(0,1fr);
   }
   .aside{
-    position: sticky;
+    position: fixed;
+    width: 100%;
     height: 90px;
     flex-direction: row;
     justify-content:space-between;
@@ -223,6 +236,11 @@ img#use{
     margin-right: 0.5em;
   }
 
+  video {
+    margin-top: 120px;
+    margin-bottom: 60px;
+  }
+
   .midasi1{
     padding-left: 0px;
     text-align: center;
@@ -235,6 +253,10 @@ img#use{
     margin-left: 0%;
     margin-right: 0%;
   }
+  .midasi2{
+    padding-left: 0px;
+    text-align: center;
+  }
   .use_box{
     flex-direction: column;
   }
@@ -246,6 +268,13 @@ img#use{
     margin-left: 0%;
     margin-right: 0%;
   }
+  .midasi3{
+    padding-left: 0px;
+    text-align: center;
+  }
+  .dl_box {
+    padding-bottom: 30px;
+  }
 }
 
 /*Smart Phone*/
@@ -256,7 +285,6 @@ img#use{
   }
   .aside{
     position: fixed;
-    top: 0;
     width: 100%;
     height: 90px;
     display: flex;
