@@ -26,7 +26,6 @@
       </nav>
     </div>
     <main class="Main" id="Top">
-      <h1>あなたのデバイスは「<span id="device"></span>」</h1>
       <div class="douga">
         <video src="./HandUI_otonasi.mp4" loop autoplay muted></video>
       </div>
@@ -90,14 +89,18 @@
         <h2 class="midasi3">ダウンロード</h2>
         <div class="dl_box">
           <div class="dl_text">
-            <p>下のボタンからアプリをダウンロードしましょう。<br/>
+            <p id="text">下のボタンからアプリをダウンロードしましょう。<br/>
+            ※このアプリはWindowsのPCのみで使うことができます。<br/>
+            ※Windows10以外での動作確認はしておりません。ご了承ください。</p>
+            <p id="text2">スマートフォンやタブレットではダウンロードすることができません。<br/>
+            WindowsのPCでダウンロードしてください。<br/>
             ※このアプリはWindowsのPCで使うことができます。<br/>
             ※Windows10以外での動作確認はしておりません。ご了承ください。</p>
-            <div class="dl_text">
+            <div class="dl_text" id="link">
               <a class="dl_btn" href="https://docs.google.com/uc?export=download&id=1zh-_XEqDorwmwRfmmkuen27ayYQZqbue" target="_blank">HandUIをダウンロード</a>
             </div>
           </div>
-          <div class="dl_text">
+          <div class="dl_text" id="slider">
             <div class="slider">
               <div>
                 <img src="image/dl_01.png" id="use">
@@ -148,21 +151,34 @@
       dots: true
     });
   });
-  // デバイスの首里を取得する関数
+  
+  // デバイスを識別する関数
   function device() {
-  var ua = navigator.userAgent;
+  let ua = navigator.userAgent;
+  let text = document.getElementById("text")
+  let text2 = document.getElementById("text2")
+  let btn = document.getElementById("link");
   if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
-          return 'mobile';
+      return 'mobile';
     }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
-          return 'tablet';
+      return 'tablet';
     }else{
-          return 'desktop';
-      }
+      return 'desktop';
     }
-
-  window.onload = function() {
-    document.getElementById("device").innerHTML = device();
   }
+
+  if (device()=='desktop'){
+    document.getElementById("text").style.display="block"
+    document.getElementById("text2").style.display="none"
+    document.getElementById("slider").style.display="block"
+    document.getElementById("link").style.display="block"
+  } else{
+    document.getElementById("text").style.display="none"
+    document.getElementById("text2").style.display="block"
+    document.getElementById("slider").style.display="none"
+    document.getElementById("link").style.display="none"
+  }
+  console.log(device())
 </script>
 
 </body>
