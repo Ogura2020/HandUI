@@ -26,6 +26,7 @@
       </nav>
     </div>
     <main class="Main" id="Top">
+      <h1>あなたのデバイスは「<span id="device"></span>」</h1>
       <div class="douga">
         <video src="./HandUI.mp4" loop autoplay muted playsinline></video>
       </div>
@@ -153,10 +154,12 @@ window.addEventListener('DOMContentLoaded', function() {
   console.log(w)
   if (w <= 850){
     var scroll = new SmoothScroll('a[href*="#"]',{
-      header: '#header'
+      header: '#header',
+      speed: 1000
     });
   }else{
     var scroll = new SmoothScroll('a[href*="#"]');
+    speed: 1000
   }
 });
 
@@ -180,6 +183,9 @@ window.addEventListener('DOMContentLoaded', function() {
       return 'desktop';
     }
   }
+  window.onload = function() {
+      document.getElementById("device").innerHTML = device();
+    }
 
   if (device()=='desktop'){
     document.getElementById("text").style.display="block"
