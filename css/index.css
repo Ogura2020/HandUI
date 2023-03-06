@@ -97,7 +97,6 @@ img#apuri{
   font-size: 22px;
   font-weight: 700;
   text-align: center;
-
 }
 
 .use{
@@ -132,6 +131,25 @@ img#use{
   margin-bottom: auto;
 }
 
+.use_text2{
+  text-align: center;
+  padding-top: 1.5em;
+  font-size: 22px;
+}
+.youtube{
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+}
+iframe{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
 .dl{
   display: flex;
   flex-direction: column;
@@ -150,7 +168,6 @@ text-align: center;
   flex-direction: column;
   background-color: #fefefe;
   border-radius: 30px;
-
 }
 .dl_text{
   display: flex;
